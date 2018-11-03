@@ -157,6 +157,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.className = 'restaurant-wrapper';
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
@@ -164,18 +165,22 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   const name = document.createElement('h1');
+  name.className = 'restaurant-name';
   name.innerHTML = restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
+  neighborhood.className = 'restaurant-neighborhood';
   neighborhood.innerHTML = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
+  address.className = 'restaurant-address';
   address.innerHTML = restaurant.address;
   li.append(address);
 
   const more = document.createElement('a');
+  more.className = 'restaurant-link';
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.tabIndex='3';
@@ -224,7 +229,7 @@ self.addEventListener('fetch', function (e) {
         console.log("found", e.request, ' in cache');
         return response;
       } else {
-        console.loge('Could not find ', e.request, ' in cache, Fetching.');
+        console.log('Could not find ', e.request, ' in cache, Fetching.');
         return fetch(e.request)
           .then(function (response) {
             const clonedResponse = response.clone();
