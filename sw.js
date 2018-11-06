@@ -1,7 +1,9 @@
 const cacheVersion = "cache1";
 const cacheFiles = [
 	'/',
-	'/css/styles.css',
+	'/css/global.css',
+	'/css/index.css',
+	'/css/restaurant.css',
 	'/data/restaurants.json',
 	'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
 	'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
